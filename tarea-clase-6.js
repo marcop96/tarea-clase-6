@@ -31,5 +31,13 @@ $botonIngresar.onclick = function(){
 
 }
 
+function crearLabels(){
+    const $nuevoLabel = document.createElement('label')
+    $nuevoLabel.innerHTML= `Integrante ${cantidadIntegrantes}`
+}
+
+function crearInputs(){
+    const $nuevoInput = document.createElement('input')
+}
 
 
