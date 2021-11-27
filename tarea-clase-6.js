@@ -23,23 +23,55 @@ preguntar cantidad de integrantes en un input   HECHO
 
 */
 
-let $botonIngresar = document.querySelector(".boton-ingresar")
+let $botonIngresar = document.querySelector("#boton-ingresar");
+const $botonResultado = document.querySelector("#boton-resultado")
+$botonIngresar.onclick = function () {
+    const $formIntegrantes = document.querySelector("#edad-integrantes");
 
-$botonIngresar.onclick = function(){
-    let cantidadIntegrantes = document.querySelector(".ingresar-integrantes").value  //si declaro la variable fuera dela función toma el valor al principio y nunca cambia
-    console.log(cantidadIntegrantes)
-    crearLabels()
+  let cantidadIntegrantes = document.querySelector("#ingresar-integrantes").value;
+     //si declaro la variable fuera dela función toma el valor al principio y nunca cambia
+   const $divResultado = document.querySelector("#resultado")
+     console.log(cantidadIntegrantes);
+        for(let i=1;i<=cantidadIntegrantes;i++){
+           crearLabel(i);   
+           crearInput(i);
+           const break2 = document.createElement("br");
+           $formIntegrantes.appendChild(break2);
+           $divResultado.classList.remove("oculto");
+
+
+        }
+
+
+};
+$botonResultado.onclick = function () {
+    calcularMayor()
+    //calcularMenor()
+    //calcularPromedio()
+
 }
 
-function crearLabels(){
-    const $nuevoLabel = document.createElement('label')
-    const $divIntegrantes = document.querySelector('.div-integrantes')
-    $nuevoLabel.innerHTML= `Integrante familiar`
-    $divIntegrantes.Appendchild($nuevoLabel)
+function crearLabel(x) {
+  const $nuevoLabel = document.createElement("label");
+  const $formIntegrantes = document.querySelector("#edad-integrantes");
+  $nuevoLabel.innerHTML = `Integrante familiar ${x} `;
+  $nuevoLabel.htmlFor=x
+  $formIntegrantes.appendChild($nuevoLabel);
+  
 }
 
-function crearInputs(){
-    const $nuevoInput = document.createElement('input')
+function crearInput(x) {
+  const $nuevoInput = document.createElement("input");
+  $nuevoInput.id = x
+  const $formIntegrantes = document.querySelector("#edad-integrantes");
+
+//   $nuevoInput.placeholder(`${x}`)
+  $formIntegrantes.appendChild($nuevoInput);
+  
 }
 
 
+function calcularMayor(){
+
+    
+}
