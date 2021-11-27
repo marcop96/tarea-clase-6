@@ -48,12 +48,12 @@ $botonResultado.onclick = function () {
     edades.push(textoInputs);
   }
   calcularMayor(edades);
-  calcularMenor(edades)
-  calcularPromedio(edades)
-let mayor = calcularMayor(edades)
-let menor = calcularMenor(edades)
-let promedio = calcularPromedio(edades)
-  meterCosas(mayor,menor,promedio)
+  calcularMenor(edades);
+  calcularPromedio(edades);
+  let mayor = calcularMayor(edades);
+  let menor = calcularMenor(edades);
+  let promedio = calcularPromedio(edades);
+  meterCosas(mayor, menor, promedio);
 };
 
 function crearLabel(x) {
@@ -80,36 +80,34 @@ function calcularMayor(edades) {
       mayor = edades[i];
     }
   }
-return mayor
+  return mayor;
 }
 
 function calcularMenor(edades) {
-  let menor = edades[0]
+  let menor = edades[0];
   for (let i = 0; i < edades.length; i++) {
     if (edades[i] <= menor) {
       menor = edades[i];
     }
   }
-return menor
+  return menor;
 }
 
-function calcularPromedio(edades){
-
-let suma = 0
-for (let i = 0; i < edades.length; i++) {
-  suma += edades[i]
+function calcularPromedio(edades) {
+  let suma = 0;
+  for (let i = 0; i < edades.length; i++) {
+    suma += edades[i];
+  }
+  let promedio = suma / edades.length;
+  return promedio;
 }
-    let promedio = suma/edades.length
-return promedio
-}
 
-function meterCosas(mayor,menor,promedio){
-const inputMayor = document.querySelector("#mayor")
-const inputMenor = document.querySelector("#menor")
-const inputPromedio = document.querySelector("#promedio")
+function meterCosas(mayor, menor, promedio) {
+  const inputMayor = document.querySelector("#mayor");
+  const inputMenor = document.querySelector("#menor");
+  const inputPromedio = document.querySelector("#promedio");
 
-inputMayor.value = mayor
-inputMenor.value = menor
-inputPromedio.value = promedio
-
+  inputMayor.value = mayor;
+  inputMenor.value = menor;
+  inputPromedio.value = promedio;
 }
