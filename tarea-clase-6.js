@@ -28,12 +28,14 @@ let $botonIngresar = document.querySelector(".boton-ingresar")
 $botonIngresar.onclick = function(){
     let cantidadIntegrantes = document.querySelector(".ingresar-integrantes").value  //si declaro la variable fuera dela función toma el valor al principio y nunca cambia
     console.log(cantidadIntegrantes)
-
+    crearLabels()
 }
 
 function crearLabels(){
     const $nuevoLabel = document.createElement('label')
-    $nuevoLabel.innerHTML= `Integrante ${cantidadIntegrantes}`
+    const $divIntegrantes = document.querySelector('.div-integrantes')
+    $nuevoLabel.innerHTML= `Integrante familiar`
+    $divIntegrantes.Appendchild($nuevoLabel)
 }
 
 function crearInputs(){
