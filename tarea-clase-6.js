@@ -14,12 +14,32 @@ Al hacer click en "calcular", mostrar en un elemento pre-existente el mayor sala
 Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como 0).
 ---------------------------
 
-preguntar cantidad de integrantes en un input
-         - al presionar un boton se crean inputs y labels en base a la cantidad de integrantes
+preguntar cantidad de integrantes en un input   HECHO
+         - al presionar un boton se crean inputs y labels en base a la cantidad de integrantes Y UN BOTON PARA CALULAR LAS EDADES
         contenido de label (integrante familiar #X) - inputs placeholder (ingresar edad del integrante X)
         botón calcular 
-          - muestra tres campos pre-existentes (ocultos)
+          - muestra tres campos pre-existentes (ocultos)     HECHO
           calcula menor mayor promedio en esos 3 campos
-         
+
 */
+
+let $botonIngresar = document.querySelector(".boton-ingresar")
+
+$botonIngresar.onclick = function(){
+    let cantidadIntegrantes = document.querySelector(".ingresar-integrantes").value  //si declaro la variable fuera dela función toma el valor al principio y nunca cambia
+    console.log(cantidadIntegrantes)
+    crearLabels()
+}
+
+function crearLabels(){
+    const $nuevoLabel = document.createElement('label')
+    const $divIntegrantes = document.querySelector('.div-integrantes')
+    $nuevoLabel.innerHTML= `Integrante familiar`
+    $divIntegrantes.Appendchild($nuevoLabel)
+}
+
+function crearInputs(){
+    const $nuevoInput = document.createElement('input')
+}
+
 
