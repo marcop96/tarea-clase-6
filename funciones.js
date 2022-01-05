@@ -46,3 +46,14 @@ function calcularMenor(edades) {
     let promedio = suma / edades.length;
     return promedio;
   }
+
+  function meterCosas(mayor, menor, promedio) {
+    const inputMayor = document.querySelector("#mayor");
+    const inputMenor = document.querySelector("#menor");
+    const inputPromedio = document.querySelector("#promedio");
+  
+    inputMayor.value = mayor;
+    inputMenor.value = menor;
+    inputPromedio.value = promedio;
+  }
+  
