@@ -56,32 +56,7 @@ $botonResultado.onclick = function () {
   meterCosas(mayor, menor, promedio);
 };
 
-function crearLabel(x) {
-  const $nuevoLabel = document.createElement("label");
-  const $formIntegrantes = document.querySelector("#edad-integrantes");
-  $nuevoLabel.innerHTML = `Integrante familiar ${x} `;
-  $nuevoLabel.htmlFor = x;
-  $formIntegrantes.appendChild($nuevoLabel);
-}
 
-function crearInput(x) {
-  const $nuevoInput = document.createElement("input");
-  $nuevoInput.id = x;
-  const $formIntegrantes = document.querySelector("#edad-integrantes");
-
-  //   $nuevoInput.placeholder(`${x}`)
-  $formIntegrantes.appendChild($nuevoInput);
-}
-
-function calcularMayor(edades) {
-  let mayor = 0;
-  for (let i = 0; i < edades.length; i++) {
-    if (edades[i] >= mayor) {
-      mayor = edades[i];
-    }
-  }
-  return mayor;
-}
 
 function calcularMenor(edades) {
   let menor = edades[0];
