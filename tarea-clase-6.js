@@ -21,6 +21,11 @@ preguntar cantidad de integrantes en un input   HECHO
           - muestra tres campos pre-existentes (ocultos)     HECHO
           calcula menor mayor promedio en esos 3 campos
 
+
+
+
+          meter los integrantes en un div para poder ocultarlos
+          boton resetear, oculta datos innefcesarios y BORRA los divs para poder vovler a usar la app
 */
 let cantidadIntegrantes;
 let $botonIngresar = document.querySelector("#boton-ingresar");
