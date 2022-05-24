@@ -18,7 +18,7 @@ preguntar cantidad de integrantes en un input   HECHO
          - al presionar un boton se crean inputs y labels en base a la cantidad de integrantes Y UN BOTON PARA CALULAR LAS EDADES
         contenido de label (integrante familiar #X) - inputs placeholder (ingresar edad del integrante X)
         botón calcular 
-          - muestra tres campos pre-existentes (ocultos)     HECHO
+          - muestra tres campos pre-existentsd  |es (ocultos)     HECHO
           calcula menor mayor promedio en esos 3 campos
 
 
@@ -28,7 +28,7 @@ preguntar cantidad de integrantes en un input   HECHO
           boton resetear, oculta datos innefcesarios y BORRA los divs para poder vovler a usar la app
 */
 let cantidadIntegrantes;
-let $botonIngresar = document.querySelector("#boton-ingresar");
+const $botonIngresar = document.querySelector("#boton-ingresar");
 const $botonResultado = document.querySelector("#boton-resultado");
 $botonIngresar.onclick = function () {
   const $formIntegrantes = document.querySelector("#edad-integrantes");
