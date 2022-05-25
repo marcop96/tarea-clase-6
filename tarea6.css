@@ -1,3 +1,7 @@
-.oculto{
-display:none
+.oculto {
+  display: none;
+}
+
+.cantidad-integrantes {
+  width: 224px;
 }
