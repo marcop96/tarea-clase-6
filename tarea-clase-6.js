@@ -11,13 +11,16 @@ Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuev
 *crear div oculto para las respuestas
 
 !boton asigna valor a la cantidad de integrantes
+*funcion crear input
+*funcion crear label
+?funcion para meter eso en el div?
 !funciones mayor menor promedio
 
 
 */
 
 let $botonConfirmar = document.querySelector(".confirmar");
-
+let $resultado = document.querySelector(".respuesta");
 $botonConfirmar.onclick = function () {
   let $cantidadIntegrantes = document.querySelector(
     ".cantidad-integrantes"
@@ -26,11 +29,26 @@ $botonConfirmar.onclick = function () {
 
   for (let i = 0; i < $cantidadIntegrantes; i++) {
     numeroIntegrantes++;
-
-    console.log(numeroIntegrantes);
   }
 };
 
+function crearInput() {
+  let nuevoInput = document.createElement("input");
+  $resultado.appendChild(nuevoInput);
+}
+// function meterInput() {
+//   crearInput();
+//   nuevoInput.appendChild(resultado);
+//}
+function crearLabel() {
+  let nuevoLabel = document.createElement("label");
+  $resultado.appendChild(nuevoLabel);
+}
+
+// function meterLabel() {
+//   crearLabel();
+//   nuevoLabel.appendChild(resultado);
+// }
 /*
 TAREA:
 Crear una interfaz que permita agregar ó quitar (botones agregar y quitar) inputs+labels para completar el salario anual de cada integrante de la familia que trabaje.
