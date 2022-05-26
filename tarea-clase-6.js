@@ -25,6 +25,7 @@ let $botonConfirmar = document.querySelector(".confirmar");
 let $resultado = document.querySelector(".respuesta");
 let $divCalculos = document.querySelector(".calculos");
 let $divRespuesta = document.querySelector(".resultados");
+let edades = [];
 $botonConfirmar.onclick = function () {
   let $cantidadIntegrantes = document.querySelector(
     ".cantidad-integrantes"
@@ -33,21 +34,17 @@ $botonConfirmar.onclick = function () {
 
   for (let i = 1; i <= $cantidadIntegrantes; i++) {
     numeroIntegrantes++;
-
     crearLabel(i);
     crearInput(i);
   }
   $divCalculos.classList.remove("oculto");
 };
 let $botonCalcular = document.querySelector(".calcular");
-$botonCalcular.onclick = function () {
-  $divRespuesta.classList.remove("oculto");
-  console.log("hola");
-};
 
 function crearInput(i) {
   let nuevoInput = document.createElement("input");
   $resultado.appendChild(nuevoInput);
+  nuevoInput.classList.add("nuevo-input");
   let br = document.createElement("br");
   $resultado.appendChild(br);
 }
@@ -56,6 +53,11 @@ function crearLabel(i) {
   $resultado.appendChild(nuevoLabel);
   nuevoLabel.textContent = `familiar nro ${i}`;
 }
+
+$botonCalcular.onclick = function () {
+  $divRespuesta.classList.remove("oculto");
+  console.log("hola");
+};
 // function calcularMayor() {
 //   let mayor = 0;
 //   if (i > mayor) {
