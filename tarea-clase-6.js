@@ -13,7 +13,7 @@ Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuev
 !boton asigna valor a la cantidad de integrantes
 *funcion crear input
 *funcion crear label
-?funcion para meter eso en el div?
+*funcion para meter eso en el div?
 !funciones mayor menor promedio
 
 
@@ -27,26 +27,39 @@ $botonConfirmar.onclick = function () {
   ).value;
   let numeroIntegrantes = 0;
 
-  for (let i = 0; i < $cantidadIntegrantes; i++) {
+  for (let i = 1; i <= $cantidadIntegrantes; i++) {
     numeroIntegrantes++;
+    function crearInput() {
+      let nuevoInput = document.createElement("input");
+      $resultado.appendChild(nuevoInput);
+      let br = document.createElement("br");
+      $resultado.appendChild(br);
+    }
+    function crearLabel() {
+      let nuevoLabel = document.createElement("label");
+      $resultado.appendChild(nuevoLabel);
+      nuevoLabel.textContent = `familiar nro ${i}`;
+    }
     crearLabel();
     crearInput();
   }
 };
 
-function crearInput() {
-  let nuevoInput = document.createElement("input");
-  $resultado.appendChild(nuevoInput);
-}
-// function meterInput() {
-//   crearInput();
-//   nuevoInput.appendChild(resultado);
-//}
-function crearLabel() {
-  let nuevoLabel = document.createElement("label");
-  nuevoLabel.textContent("hola");
-  $resultado.appendChild(nuevoLabel);
-}
+// function crearInput() {
+//   let nuevoInput = document.createElement("input");
+//   $resultado.appendChild(nuevoInput);
+//   let br = document.createElement("br");
+//   $resultado.appendChild(br);
+// }
+// // function meterInput() {
+// //   crearInput();
+// //   nuevoInput.appendChild(resultado);
+// //}
+// function crearLabel() {
+//   let nuevoLabel = document.createElement("label");
+//   $resultado.appendChild(nuevoLabel);
+//   nuevoLabel.textContent = `familiar nro `;
+// }
 
 // function meterLabel() {
 //   crearLabel();
