@@ -43,6 +43,9 @@ $botonConfirmar.onclick = function () {
     crearLabel();
     crearInput();
   }
+  let botonCalculos = document.createElement("button");
+  botonCalculos.innerHTML = "Calcular";
+  $resultado.appendChild(botonCalculos);
 };
 
 // function crearInput() {
