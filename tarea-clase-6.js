@@ -13,14 +13,18 @@ Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuev
 !boton asigna valor a la cantidad de integrantes
 *funcion crear input
 *funcion crear label
-*funcion para meter eso en el div?
+*funcion para meter eso en el div
+
 !funciones mayor menor promedio
+
 
 
 */
 
 let $botonConfirmar = document.querySelector(".confirmar");
 let $resultado = document.querySelector(".respuesta");
+let $divCalculos = document.querySelector(".calculos");
+let $divRespuesta = document.querySelector(".resultados");
 $botonConfirmar.onclick = function () {
   let $cantidadIntegrantes = document.querySelector(
     ".cantidad-integrantes"
@@ -43,31 +47,14 @@ $botonConfirmar.onclick = function () {
     crearLabel();
     crearInput();
   }
-  let botonCalculos = document.createElement("button");
-  botonCalculos.innerHTML = "Calcular";
-  $resultado.appendChild(botonCalculos);
+  $divCalculos.classList.remove("oculto");
+};
+let $botonCalcular = document.querySelector(".calcular");
+$botonCalcular.onclick = function () {
+  $divRespuesta.classList.remove("oculto");
+  console.log("hola");
 };
 
-// function crearInput() {
-//   let nuevoInput = document.createElement("input");
-//   $resultado.appendChild(nuevoInput);
-//   let br = document.createElement("br");
-//   $resultado.appendChild(br);
-// }
-// // function meterInput() {
-// //   crearInput();
-// //   nuevoInput.appendChild(resultado);
-// //}
-// function crearLabel() {
-//   let nuevoLabel = document.createElement("label");
-//   $resultado.appendChild(nuevoLabel);
-//   nuevoLabel.textContent = `familiar nro `;
-// }
-
-// function meterLabel() {
-//   crearLabel();
-//   nuevoLabel.appendChild(resultado);
-// }
 /*
 TAREA:
 Crear una interfaz que permita agregar ó quitar (botones agregar y quitar) inputs+labels para completar el salario anual de cada integrante de la familia que trabaje.
