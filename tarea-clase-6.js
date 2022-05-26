@@ -29,6 +29,8 @@ $botonConfirmar.onclick = function () {
 
   for (let i = 0; i < $cantidadIntegrantes; i++) {
     numeroIntegrantes++;
+    crearLabel();
+    crearInput();
   }
 };
 
@@ -42,6 +44,7 @@ function crearInput() {
 //}
 function crearLabel() {
   let nuevoLabel = document.createElement("label");
+  nuevoLabel.textContent("hola");
   $resultado.appendChild(nuevoLabel);
 }
 
