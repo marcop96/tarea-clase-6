@@ -33,19 +33,9 @@ $botonConfirmar.onclick = function () {
 
   for (let i = 1; i <= $cantidadIntegrantes; i++) {
     numeroIntegrantes++;
-    function crearInput() {
-      let nuevoInput = document.createElement("input");
-      $resultado.appendChild(nuevoInput);
-      let br = document.createElement("br");
-      $resultado.appendChild(br);
-    }
-    function crearLabel() {
-      let nuevoLabel = document.createElement("label");
-      $resultado.appendChild(nuevoLabel);
-      nuevoLabel.textContent = `familiar nro ${i}`;
-    }
-    crearLabel();
-    crearInput();
+
+    crearLabel(i);
+    crearInput(i);
   }
   $divCalculos.classList.remove("oculto");
 };
@@ -55,6 +45,23 @@ $botonCalcular.onclick = function () {
   console.log("hola");
 };
 
+function crearInput(i) {
+  let nuevoInput = document.createElement("input");
+  $resultado.appendChild(nuevoInput);
+  let br = document.createElement("br");
+  $resultado.appendChild(br);
+}
+function crearLabel(i) {
+  let nuevoLabel = document.createElement("label");
+  $resultado.appendChild(nuevoLabel);
+  nuevoLabel.textContent = `familiar nro ${i}`;
+}
+// function calcularMayor() {
+//   let mayor = 0;
+//   if (i > mayor) {
+//     mayor = i;
+//   }
+// }
 /*
 TAREA:
 Crear una interfaz que permita agregar ó quitar (botones agregar y quitar) inputs+labels para completar el salario anual de cada integrante de la familia que trabaje.
