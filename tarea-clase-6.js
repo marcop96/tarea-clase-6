@@ -56,8 +56,15 @@ function crearLabel(i) {
 
 $botonCalcular.onclick = function () {
   $divRespuesta.classList.remove("oculto");
-  console.log("hola");
+  let valorInput = document.querySelectorAll(".nuevo-input");
+
+  for (let x = 0; x < valorInput.length; x++) {
+    edades.push(valorInput[x].value);
+    console.log(edades);
+  }
+  //? edades[] con todo el valor puesto
 };
+
 // function calcularMayor() {
 //   let mayor = 0;
 //   if (i > mayor) {
