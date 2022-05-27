@@ -60,17 +60,16 @@ $botonCalcular.onclick = function () {
 
   for (let x = 0; x < valorInput.length; x++) {
     edades.push(valorInput[x].value);
-    console.log(edades);
+    //  console.log(edades);
   }
-  //? edades[] con todo el valor puesto
+  calcularMayor(edades);
 };
 
-// function calcularMayor() {
-//   let mayor = 0;
-//   if (i > mayor) {
-//     mayor = i;
-//   }
-// }
+function calcularMayor(edades) {
+  console.log(edades);
+  let mayor = Math.max(edades);
+  console.log(mayor);
+}
 /*
 TAREA:
 Crear una interfaz que permita agregar ó quitar (botones agregar y quitar) inputs+labels para completar el salario anual de cada integrante de la familia que trabaje.
