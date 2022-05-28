@@ -7,32 +7,31 @@ Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuev
 */
 
 /*
-*crear input que pregunta cantidad de integrantes + boton para confirmar 
-*crear div oculto para las respuestas
+!boton resetear
+eliminar  inputs para nros
+ocultar div respuesta
 
-!boton asigna valor a la cantidad de integrantes
-*funcion crear input
-*funcion crear label
-*funcion para meter eso en el div
-
-!funciones mayor menor promedio
-
-
+!ignorar si el input está vacio.
 
 */
 
-let $botonConfirmar = document.querySelector(".confirmar");
-let $resultado = document.querySelector(".respuesta");
-let $divCalculos = document.querySelector(".calculos");
-let $divRespuesta = document.querySelector(".resultados");
+const $botonConfirmar = document.querySelector(".confirmar");
+const $botonResetear = document.querySelector(".resetear");
+
+const $resultado = document.querySelector(".respuesta");
+const $divCalculos = document.querySelector(".calculos");
+const $divRespuesta = document.querySelector(".resultados");
 let edades = [];
-let inputMayor = document.querySelector(".mayor");
-let inputMenor = document.querySelector(".menor");
-let inputPromedio = document.querySelector(".promedio");
+const inputMayor = document.querySelector(".mayor");
+const inputMenor = document.querySelector(".menor");
+const inputPromedio = document.querySelector(".promedio");
+const $botonCalcular = document.querySelector(".calcular");
+
 $botonConfirmar.onclick = function () {
   let $cantidadIntegrantes = document.querySelector(
     ".cantidad-integrantes"
   ).value;
+
   let numeroIntegrantes = 0;
 
   for (let i = 1; i <= $cantidadIntegrantes; i++) {
@@ -42,44 +41,41 @@ $botonConfirmar.onclick = function () {
   }
   $divCalculos.classList.remove("oculto");
 };
-let $botonCalcular = document.querySelector(".calcular");
 
+// !$botonResetear.onclick = function () {
+//  ! $divRespuesta.classList.add("oculto");
+// !};
+
+$botonCalcular.onclick = function () {
+  $divRespuesta.classList.remove("oculto");
+  let valorInput = document.querySelectorAll(".nuevo-input");
+  for (let x = 0; x < valorInput.length; x++) {
+    edades.push(Number(valorInput[x].value));
+  }
+  inputMayor.value = calcularMayor(edades);
+  inputMenor.value = calcularMenor(edades);
+  inputPromedio.value = calcularPromedio(edades);
+};
 function crearInput(i) {
   let nuevoInput = document.createElement("input");
   $resultado.appendChild(nuevoInput);
   nuevoInput.classList.add("nuevo-input");
   let br = document.createElement("br");
   $resultado.appendChild(br);
+  return nuevoInput;
 }
 function crearLabel(i) {
   let nuevoLabel = document.createElement("label");
   $resultado.appendChild(nuevoLabel);
   nuevoLabel.textContent = `familiar nro ${i}`;
 }
-
-$botonCalcular.onclick = function () {
-  $divRespuesta.classList.remove("oculto");
-  let valorInput = document.querySelectorAll(".nuevo-input");
-
-  for (let x = 0; x < valorInput.length; x++) {
-    edades.push(Number(valorInput[x].value));
-    //  console.log(edades);
-  }
-  inputMayor.value = calcularMayor(edades);
-  inputMenor.value = calcularMenor(edades);
-  inputPromedio.value = calcularPromedio(edades);
-};
-
 function calcularMayor(edades) {
-  console.log(edades);
   let mayor = Math.max(...edades);
-  console.log(mayor);
   return mayor;
 }
 
 function calcularMenor(edades) {
   let menor = Math.min(...edades);
-  console.log(menor);
   return menor;
 }
 
@@ -88,7 +84,6 @@ function calcularPromedio(edades) {
   for (x = 0; x < edades.length; x++) {
     suma += edades[x];
   }
-  console.log(suma / edades.length);
   return suma / edades.length;
 }
 
