@@ -8,32 +8,33 @@
     <link rel="stylesheet" type="text/css" media="screen" href="tarea6.css" />
   </head>
   <body>
-    <div class="pregunta">
-      <input
-        value="3"
-        class="cantidad-integrantes"
-        type="number"
-        placeholder="cuántos familiares integran tu familia?"
-      />
-      <button class="confirmar">Confirmar</button>
-      <button class="resetear">Resetear</button>
-    </div>
-    <div class="respuesta"></div>
-    <div class="calculos oculto">
-      <button class="calcular">Calcular</button>
-      <br />
-      <div class="resultados oculto">
-        <input class="mayor" disabled />
-        <label>Mayor</label>
-        <br />
-        <input class="menor" disabled />
-        <label>Menor</label>
-        <br />
-        <input class="promedio" disabled />
-        <label>Promedio</label>
+    <form>
+      <div class="pregunta">
+        <input
+          value="3"
+          class="cantidad-integrantes"
+          type="number"
+          placeholder="cuántos familiares integran tu familia?"
+        />
+        <button class="confirmar">Confirmar</button>
+        <button class="resetear">Resetear</button>
       </div>
-    </div>
-
+      <div class="respuesta"></div>
+      <div class="calculos oculto">
+        <button class="calcular">Calcular</button>
+        <br />
+        <div class="resultados oculto">
+          <input class="mayor" disabled />
+          <label>Mayor</label>
+          <br />
+          <input class="menor" disabled />
+          <label>Menor</label>
+          <br />
+          <input class="promedio" disabled />
+          <label>Promedio</label>
+        </div>
+      </div>
+    </form>
     <script src="funciones.js"></script>
     <script src="tarea-clase-6.js"></script>
   </body>

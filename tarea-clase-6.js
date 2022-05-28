@@ -8,10 +8,8 @@ Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuev
 
 /*
 !boton resetear
-eliminar  inputs para nros
-ocultar div respuesta
 
-!ignorar si el input está vacio.
+!tofix, botconfirmar.onclick necesita primero borrar los integrantes anteriores
 
 */
 
@@ -36,10 +34,10 @@ $botonConfirmar.onclick = function () {
 
   for (let i = 1; i <= $cantidadIntegrantes; i++) {
     numeroIntegrantes++;
-    crearLabel(i);
-    crearInput(i);
+    crearIntegrantes(i);
   }
   $divCalculos.classList.remove("oculto");
+  event.preventDefault();
 };
 
 // !$botonResetear.onclick = function () {
@@ -55,8 +53,13 @@ $botonCalcular.onclick = function () {
   inputMayor.value = calcularMayor(edades);
   inputMenor.value = calcularMenor(edades);
   inputPromedio.value = calcularPromedio(edades);
+  event.preventDefault();
 };
 
+function crearIntegrantes(i) {
+  crearLabel(i);
+  crearInput(i);
+}
 /*
 TAREA:
 Crear una interfaz que permita agregar ó quitar (botones agregar y quitar) inputs+labels para completar el salario anual de cada integrante de la familia que trabaje.

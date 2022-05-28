@@ -1,16 +1,3 @@
-function crearInput(i) {
-  let nuevoInput = document.createElement("input");
-  $resultado.appendChild(nuevoInput);
-  nuevoInput.classList.add("nuevo-input");
-  let br = document.createElement("br");
-  $resultado.appendChild(br);
-  return nuevoInput;
-}
-function crearLabel(i) {
-  let nuevoLabel = document.createElement("label");
-  $resultado.appendChild(nuevoLabel);
-  nuevoLabel.textContent = `familiar nro ${i}`;
-}
 function calcularMayor(edades) {
   let mayor = Math.max(...edades);
   return mayor;
@@ -27,4 +14,17 @@ function calcularPromedio(edades) {
     suma += edades[x];
   }
   return suma / edades.length;
+}
+function crearInput(i) {
+  let nuevoInput = document.createElement("input");
+  $resultado.appendChild(nuevoInput);
+  nuevoInput.classList.add("nuevo-input");
+  let br = document.createElement("br");
+  $resultado.appendChild(br);
+  return nuevoInput;
+}
+function crearLabel(i) {
+  let nuevoLabel = document.createElement("label");
+  $resultado.appendChild(nuevoLabel);
+  nuevoLabel.textContent = `familiar nro ${i}`;
 }
