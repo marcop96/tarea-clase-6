@@ -26,6 +26,9 @@ let $resultado = document.querySelector(".respuesta");
 let $divCalculos = document.querySelector(".calculos");
 let $divRespuesta = document.querySelector(".resultados");
 let edades = [];
+let inputMayor = document.querySelector(".mayor");
+let inputMenor = document.querySelector(".menor");
+let inputPromedio = document.querySelector(".promedio");
 $botonConfirmar.onclick = function () {
   let $cantidadIntegrantes = document.querySelector(
     ".cantidad-integrantes"
@@ -59,17 +62,36 @@ $botonCalcular.onclick = function () {
   let valorInput = document.querySelectorAll(".nuevo-input");
 
   for (let x = 0; x < valorInput.length; x++) {
-    edades.push(valorInput[x].value);
+    edades.push(Number(valorInput[x].value));
     //  console.log(edades);
   }
-  calcularMayor(edades);
+  inputMayor.value = calcularMayor(edades);
+  inputMenor.value = calcularMenor(edades);
+  inputPromedio.value = calcularPromedio(edades);
 };
 
 function calcularMayor(edades) {
   console.log(edades);
-  let mayor = Math.max(edades);
+  let mayor = Math.max(...edades);
   console.log(mayor);
+  return mayor;
 }
+
+function calcularMenor(edades) {
+  let menor = Math.min(...edades);
+  console.log(menor);
+  return menor;
+}
+
+function calcularPromedio(edades) {
+  let suma = 0;
+  for (x = 0; x < edades.length; x++) {
+    suma += edades[x];
+  }
+  console.log(suma / edades.length);
+  return suma / edades.length;
+}
+
 /*
 TAREA:
 Crear una interfaz que permita agregar ó quitar (botones agregar y quitar) inputs+labels para completar el salario anual de cada integrante de la familia que trabaje.
