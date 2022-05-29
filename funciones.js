@@ -28,3 +28,13 @@ function crearLabel(i) {
   $resultado.appendChild(nuevoLabel);
   nuevoLabel.textContent = `familiar nro ${i}`;
 }
+
+function meterCosas() {
+  inputMayor.value = calcularMayor(edades);
+  inputMenor.value = calcularMenor(edades);
+  inputPromedio.value = calcularPromedio(edades);
+}
+function crearIntegrantes(i) {
+  crearLabel(i);
+  crearInput(i);
+}
