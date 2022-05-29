@@ -26,6 +26,7 @@ function crearInput(i) {
 function crearLabel(i) {
   let nuevoLabel = document.createElement("label");
   $resultado.appendChild(nuevoLabel);
+  nuevoLabel.classList.add("nuevo-label");
   nuevoLabel.textContent = `familiar nro ${i}`;
 }
 
@@ -37,4 +38,13 @@ function meterCosas() {
 function crearIntegrantes(i) {
   crearLabel(i);
   crearInput(i);
+}
+function mostrarRespuesta() {
+  $divRespuesta.classList.remove("oculto");
+}
+function tomarValorinputs() {
+  let valorInput = document.querySelectorAll(".nuevo-input");
+  for (let x = 0; x < valorInput.length; x++) {
+    edades.push(Number(valorInput[x].value));
+  }
 }
